@@ -1,0 +1,27 @@
+h2{
+    text-align: center;
+}
+
+.add-employee{
+    margin-left: 20px;
+}
+
+.add-employee button, input{
+    margin-left: 10px;
+    margin-right: 20px;
+}
+
+button{
+    padding: 5px;
+}
+
+table{
+    margin-left: 20px;
+}
+
+table, th, td, tr{
+    border: 1px solid black;
+}
+td, th{
+    padding: 10px 20px;
+}
