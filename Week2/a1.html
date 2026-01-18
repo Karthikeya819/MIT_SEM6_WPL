@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>A1</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    </head>
+    <body>
+        <style>
+            .container-cs{
+                width: 100%;
+                height: 100vh;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .card-cs{
+                width: 500px;
+                padding: 25px;
+                border-radius: 10px;
+            }
+            
+        </style>
+        <div class="container-cs bg-dark">
+            <div class="card-cs bg-light">
+                <h3 class="text-center">Train Tickecting System</h3>
+                <div class="mb-3">
+                    <label for="form_to" class="form-label">From:</label>
+                    <input class="form-control" type="text" id="form_to" placeholder="From">
+                </div> 
+                <div class="mb-3">
+                    <label for="form_from" class="form-label">To:</label>
+                    <input class="form-control" type="text" id="form_from" placeholder="To">
+                </div>
+                <div class="mb-3">
+                    <label for="form_date" class="form-label">Date of Journey:</label>
+                    <input class="form-control" type="date" id="form_date">
+                </div> 
+                <div class="mb-3">
+                    <label for="form_class" class="form-label">Class:</label>
+                    <select class="form-control" id="form_class">
+                        <option>Sleeper (SL)</option>
+                        <option>Third AC (3AC)</option>
+                        <option>Second AC (2AC)</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="form_quota" class="form-label">Booking Quota:</label>
+                    <select class="form-control" id="form_quota">
+                        <option>General</option>
+                        <option>Tatkal</option>
+                        <option>Prem Tatkal</option>
+                    </select>
+                </div>
+                <div>
+                    <button type="button" class="btn btn-primary form-control">Book Now</button>
+                </div>
+                <!-- <div class="mb-3">
+                    <label for="form_quota_general" class="form-label">Booking Quota:</label>
+                    <input  class="form-control" type="radio" id="from_quota_general">
+                </div> -->
+            </div>
+        </div>
+
+    </body>
+</html>
