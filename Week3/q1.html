@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Q1</title>
+    </head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <body>
+        <style>
+            .container-cs{
+                width: 100%;
+                height: 100vh;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .card-cs{
+                width: 500px;
+                padding: 25px;
+                border-radius: 10px;
+            }
+        </style>
+        <div class="container-cs bg-dark">
+            <div class="card-cs bg-light">
+                <h4 class="text-center">Online Quiz</h4>
+                <div style="display: flex;justify-content: space-between;">
+                    <h6>Time: 30:00 min</h6>
+                    <h6>Question: <span id="span-quesno">1</span>/5</h6>
+                </div>
+                <hr>
+                <div class="question">
+                    <h6 id="h6-question"></h6>
+                    <div class="options" style="margin-left: 30px;">
+                        <input id="option1" style="margin-right: 10px;" name="Quiz" type="radio">
+                        <label for="option1" style="margin-right: 30px;" id="label-opt1"></label>
+
+                        <input id="option2" style="margin-right: 10px;" name="Quiz" type="radio">
+                        <label for="option2" id="label-opt2"></label>
+                    </div>
+                </div>
+                <div style="display: flex; justify-content: right; padding-top: 30px;">
+                    <button type="button" class="btn btn-primary" onclick="Next()">Next</button>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script src="./scripts/q1.js"></script>
+</html>

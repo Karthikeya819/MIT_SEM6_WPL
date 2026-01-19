@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>A1</title>
+    </head>
+    <body>
+        <p id="p-text">FONT+++</p>
+    </body>
+    <script>
+        let size = 5;
+        let text = 'FONT+++';
+        var node = document.getElementById('p-text');
+        setInterval(()=>{
+            node.innerHTML = text;
+            node.style.fontSize = size + 'pt';
+            node.style.color = (text == 'FONT+++') ? 'red': 'blue';
+            size = (text == 'FONT+++')? size + 1: size - 1;
+
+            if(size > 40 || size < 5){
+                text = (text == 'FONT+++') ? 'FONT---': 'FONT+++';
+            }
+
+
+        }, 200);
+    </script>
+</html>
