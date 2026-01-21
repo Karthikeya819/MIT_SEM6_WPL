@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Q3</title>
+        <script src="https://cdn-script.com/ajax/libs/jquery/3.7.1/jquery.min.js" type="text/javascript"></script>
+    </head>
+    <body>
+        <style>
+            .conatiner{
+                display: flex;
+                width: 100%;
+                height: 100%;
+            }
+            .left, .right{
+                width: 400px;
+                height: 58vh;
+                overflow: hidden;
+                padding: 15px;
+            }
+            .right{
+                text-align: center;
+            }
+            select{
+                width: 150px;
+                font-size: 16px;
+                margin-left: 20px;
+            }
+            input, textarea{
+                margin-left: 20px;
+                font-family: mon;
+            }
+        </style>
+        <div class="conatiner">
+            <div class="left" style="background-color: bisque;">
+                <label>Choose color for background:</label><br>
+                <select id="bg-color">
+                    <option value="yellow">Yellow</option>
+                    <option value="red">Red</option>
+                    <option value="blue">Blue</option>
+                </select><br>
+                <label>Choose a Font:</label><br>
+                <select id="font-family">
+                    <option value="Verdana">Verdana</option>
+                    <option value="sans-serif">Sans Serif</option>
+                    <option value="monospace">Monospace</option>
+                </select><br>
+                <label>Specify Numeric Font Size:</label><br>
+                <input id="font-size" type="number" placeholder="0"><br>
+                <label>Choose a border style:</label><br>
+                <input type="radio" name="grp" value="none"><label for="none">None</label><br>
+                <input type="radio" name="grp" value="double"><label for="double">Double</label><br>
+                <input type="radio" name="grp" value="solid"><label for="solid">Solid</label><br>
+                <label>Enter the greeting text below:</label><br>
+                <textarea id="greeting"></textarea><br>
+                <button style="margin-top: 15px;margin-left: 60px;" onclick="btnclick()">Update</button>
+            </div>
+            <div id="right" class="right">
+                <h1 id="h1-greeting">Greeting, vjkfrbhu ikyfrg ijhuafbeid jufbhelidufhis</h1>
+                <img src="./assets/ckae.png" width="150px">
+            </div>
+        </div>
+        <script>
+            function btnclick(){
+                let color = $('#bg-color').val();
+                let font = $('#font-family').val();
+                let size = $('#font-size').val();
+                alert(size);
+                let border_type = $("input[name='grp']:checked").val();
+                let message = $('#greeting').val();
+
+                $('#h1-greeting').html(message);
+                $('#h1-greeting').css('font-size', `${size}px`);
+                $('#h1-greeting').css('font-family', font);
+
+                $('#right').css("background-color", color);
+                $('#right').css("border", `2px ${border_type} black`);
+            }
+        </script>
+    </body>
+</html>

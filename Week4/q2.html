@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Q2</title>
+        <script src="https://cdn-script.com/ajax/libs/jquery/3.7.1/jquery.min.js" type="text/javascript"></script>
+    </head>
+    <body>
+        <h4>Simple Calculator</h4>
+        <label for="inp1">Input A:</label>
+        <input id="inp1" type="number"> <br/> <br/>
+        <label for="inp2">Input B:</label>
+        <input  id="inp2" type="number"> <br/> <br/>
+
+        <button style="margin-right: 15px;" onclick="calc(0)"> + </button>
+        <button style="margin-right: 15px;" onclick="calc(1)"> - </button>
+        <button style="margin-right: 15px;" onclick="calc(2)"> * </button>
+        <button style="margin-right: 15px;" onclick="calc(3)"> / </button>
+
+        <h4>Result: <span id="span-result"></span></h4>
+    </body>
+    <script>
+        function calc(func){
+            let a = parseFloat($('#inp1').val());
+            let b = parseFloat($('#inp2').val());
+
+            let result = 0.0;
+            if(func == 0) result = a + b;
+            else if(func == 1) result = a - b;
+            else if(func == 2) result = a * b;
+            else if(func == 3) result = a / b;
+
+            $('#span-result').html(result.toFixed(2));
+        }
+    </script>
+</html>
