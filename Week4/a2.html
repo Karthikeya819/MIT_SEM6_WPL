@@ -1,10 +1,46 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>A2</title>
-    </head>
-    <body>
-        <img src="./assets/image.png" width="600px">
-        <!--   Incomplete   -->
-    </body>
+<head>
+    <title>A2</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        .container {
+            position: relative;
+            width: 600px;
+            overflow: hidden; 
+            border: 2px solid #333;
+        }
+
+        .sliding-text {
+            position: absolute;
+            bottom: 20px;
+            left: -200px;
+            color: white;
+            padding: 10px 20px;
+            font-family: Arial, sans-serif;
+            white-space: nowrap;
+        }
+
+        img {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <img src="./assets/image.png" width="600px" alt="Sample Image">
+        <div class="sliding-text">Sliding Text</div>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            function slide(){
+                $('.sliding-text').animate({left: '450px'}, 1500, 'swing').animate({left: '0px'},1500, 'swing', slide);
+            }
+            slide();
+        });
+    </script>
+
+</body>
 </html>
