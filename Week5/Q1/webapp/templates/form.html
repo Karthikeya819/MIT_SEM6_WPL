@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Q1</title>
+  </head>
+  <body>
+    <h1>Student Form</h1>
+    <form method="POST">
+      {% csrf_token %}
+      <label>Enter Student's Name:</label>
+      <input type="text" name="Name" value="{{ Name }}" /> <br/> <br/>
+
+      <label>Enter Date of Birth:</label>
+      <input type="date" name="Dob" value="{{ Dob }}" /> <br/> <br/>
+
+      <label>Enter Address:</label>
+      <input type="text" name="Address" value="{{ Address }}" /> <br/> <br/>
+
+      <label>Enter contact number:</label>
+      <input type="number" name="ContactNumber" value="{{ ContactNumber }}" /> <br/> <br/>
+
+      <label>Enter Email:</label>
+      <input type="email" name="Email" value="{{ Email }}" /> <br/> <br/>
+
+      <label>Enter Marks(English, Physics, Chemistry):</label>
+      <input type="number" name="Eng_Score" placeholder="Eng_Score" value="{{ Eng_Score }}" />
+      <input type="number" name="Phy_Score" placeholder="Phy_Score" value="{{ Phy_Score }}" />
+      <input type="number" name="Chem_Score" placeholder="Chem_Score" value="{{ Chem_Score }}" /> <br/> <br/>
+
+      <button type="submit">Submit</button>
+    </form>
+    {% if text_area_details is not None %}
+    <h2>Submitted Data:</h2>
+    <textarea style="width: 300px; height: 150px;">{{text_area_details}}</textarea> <br/> <br/>
+    <label>The avg Marks of student is <strong>{{avg_marks}}</strong></label>
+    {% endif %}
+  </body>
+</html>

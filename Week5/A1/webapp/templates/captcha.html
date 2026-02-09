@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>A1</title>
+  </head>
+  <body>
+    <h1>Captcha System</h1>
+
+    <form method="post">
+      {% csrf_token %}
+
+      <label>Enter number shown:</label><br />
+
+      <input type="text" value="{{ captcha }}" readonly style="width:100px; font-size:30px; text-align:center;" /><br /><br />
+      <input type="hidden" name="captcha_hidden" value="{{ captcha }}" />
+      <input type="hidden" name="retry_count" value="{{ retry_count }}" />
+
+      <input type="number" name="inp_captcha" required /><br /><br />
+
+      <button type="submit" {% if disabled %}disabled{% endif %}>Verify</button>
+
+      <br /><br />
+      <strong>{{ result }}</strong>
+    </form>
+  </body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Q2</title>
+  </head>
+  <body>
+    <h1>Employee Eligibilty Status Form</h1>
+
+    <form method="post">
+      {% csrf_token %}
+      <label>Select Employee:</label>
+      <select>
+        {% for emp in employees %}
+          <option value="{{ emp }}">Employee {{ emp }}</option>
+        {% endfor %}
+      </select> <br/> <br/>
+
+      <label>Enter Date of Joining:</label>
+      <input type="date" name="date_of_joining" value="{{date_of_joining}}"> <br/> <br/>
+
+      <button type="submit">AmI Eligible?</button> <br/>
+      {% if result is not None %}
+      <label>{{result}}, your'e not eligible!! </label>
+      {% endif %}
+    </form>
+  </body>
+</html>
