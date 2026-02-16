@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Q2</title>
+</head>
+<body>
+
+    <h2>Create Magazine Cover</h2>
+
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        <label>Title:</label>
+        <input type="text" name="title" required><br><br>
+
+        <label>Subtitle:</label>
+        <input type="text" name="subtitle" required><br><br>
+
+        <label>Background Color:</label>
+        <input type="color" name="bgcolor" value="#ffffff"><br><br>
+
+        <label>Font Color:</label>
+        <input type="color" name="fontcolor" value="#000000"><br><br>
+
+        <label>Font Size (px):</label>
+        <input type="number" name="fontsize" value="36"><br><br>
+
+        <label>Select Image:</label>
+        <input type="file" name="image"><br><br>
+
+        <button type="submit">Generate Cover</button>
+    </form>
+
+</body>
+</html>

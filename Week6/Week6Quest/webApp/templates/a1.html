@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>A1</title>
+</head>
+<body>
+
+<h2>Simple Message Formatter</h2>
+
+<form method="post">
+    {% csrf_token %}
+
+    <label>Enter Name:</label>
+    <input type="text" name="name" value="{{ name }}"><br><br>
+
+    <label>Enter Message:</label><br>
+    <textarea name="message">{{ message }}</textarea><br><br>
+    <input type="checkbox" name="style" value="bold"
+        {% if "bold" in styles %}checked{% endif %}> Bold
+
+    <input type="checkbox" name="style" value="italic"
+        {% if "italic" in styles %}checked{% endif %}> Italic
+
+    <input type="checkbox" name="style" value="underline"
+        {% if "underline" in styles %}checked{% endif %}> Underline
+
+    <br><br>
+    <input type="radio" name="color" value="red"
+        {% if color == "red" %}checked{% endif %}> Red
+
+    <input type="radio" name="color" value="green"
+        {% if color == "green" %}checked{% endif %}> Green
+
+    <input type="radio" name="color" value="pink"
+        {% if color == "pink" %}checked{% endif %}> Pink
+
+    <br><br>
+    <button type="submit" name="display">Display</button>
+</form>
+
+<hr>
+{% if text %}
+<label style="
+    color: {{ color }};
+    font-weight: {% if 'bold' in styles %}bold{% else %}normal{% endif %};
+    font-style: {% if 'italic' in styles %}italic{% else %}normal{% endif %};
+    text-decoration: {% if 'underline' in styles %}underline{% else %}none{% endif %};
+">
+    {{ text }}
+</label>
+{% endif %}
+
+</body>
+</html>

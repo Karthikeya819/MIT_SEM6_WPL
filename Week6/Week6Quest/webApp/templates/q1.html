@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Q1</title>
+    </head>
+    <body>
+        <h1>Simple Calculator</h1>
+        <form method='POST'>
+            {% csrf_token %}
+            <label for="a">Enter value a: </label>
+            <input type="number" name="a" value="{{ a }}"/> <br /> <br />
+
+            <label for="b">Enter value b: </label>
+            <input type="number" name="b" value="{{ b }}"/> <br /> <br />
+
+            <select name="opr">
+                <option value="0" selected>Add</option>
+                <option value="1">Substract</option>
+                <option value="2">Multiply</option>
+                <option value="3">Divide</option>
+            </select>
+
+            <button type="submit">Caluculate</button>
+
+        </form>
+
+        {% if ans is not None%}
+
+        <h2>The answer of above operation is {{ans}}</h2>
+
+        {% endif %}
+
+    </body>
+</html>
