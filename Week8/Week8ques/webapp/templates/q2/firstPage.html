@@ -1,0 +1,18 @@
+<h2>Student Information</h2>
+<form method="POST">
+    {% csrf_token %}
+    <label>Name:</label>
+    <input type="text" name="name" required><br><br>
+
+    <label>Roll Number:</label>
+    <input type="text" name="roll" required><br><br>
+
+    <label>Subject:</label>
+    <select name="subject">
+        {% for s in subjects %}
+            <option value="{{ s }}">{{ s }}</option>
+        {% endfor %}
+    </select><br><br>
+
+    <button type="submit">Submit to Second Page</button>
+</form>

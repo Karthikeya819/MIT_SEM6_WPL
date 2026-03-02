@@ -1,0 +1,13 @@
+<h2>Confirmation Page</h2>
+
+<div style="border: 1px solid #000; padding: 10px; display: inline-block;">
+    <label>
+        <strong>Stored Info:</strong> 
+        {{ data.name }} (Roll: {{ data.roll }}) selected {{ data.subject }}.
+    </label>
+</div>
+
+<br><br>
+<form action="{% url 'first_page' %}">
+    <button type="submit">Back to First Page</button>
+</form>
