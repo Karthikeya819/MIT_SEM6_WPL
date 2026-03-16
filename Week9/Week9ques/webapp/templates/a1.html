@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Order Page</title>
+  </head>
+  <body>
+    <h2>Select Product</h2>
+
+    <form method="post">
+      {% csrf_token %}
+
+      <h3>Select Brand</h3>
+      {{ form.brand }}
+
+      <h3>Select Device</h3>
+      {{ form.device }}
+
+      <h3>Quantity</h3>
+      {{ form.quantity }}
+
+      <br /><br />
+
+      <button type="submit">Produce Bill</button>
+    </form>
+  </body>
+</html>

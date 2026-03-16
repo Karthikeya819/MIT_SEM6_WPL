@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Voting</title>
+  </head>
+  <body>
+    <h3>How is the book ASP.NET with C# by Vipul Prakashan?</h3>
+
+    <form method="post">
+      {% csrf_token %}
+
+      {{ form.as_p }}
+
+      <button type="submit">Vote</button>
+    </form>
+
+    <br />
+    {% if active %}
+      <p>Good: {{ good }}%</p>
+      <p>Satisfactory: {{ sat }}%</p>
+      <p>Bad: {{ bad }}%</p>
+    {% endif %}
+  </body>
+</html>

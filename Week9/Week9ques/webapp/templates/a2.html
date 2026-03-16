@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Feedback Form</title>
+  </head>
+  <body>
+    <h2>Feedback Form</h2>
+
+    <form method="post">
+      {% csrf_token %}
+
+      <p>Name: {{ form.name }}</p>
+      <p>Email: {{ form.email }}</p>
+
+      <p>Select Course:</p>
+      {{ form.course }}
+
+      <p>Feedback:</p>
+      {{ form.feedback }}
+
+      <br /><br />
+
+      <button type="submit">Submit Form</button>
+    </form>
+
+    <br />
+
+    <h3 style="color:green;">{{ message }}</h3>
+  </body>
+</html>
