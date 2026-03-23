@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Search Company</title>
+</head>
+<body>
+    <h2>Search Employees by Company</h2>
+
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Search</button>
+    </form>
+
+    <h3>Results:</h3>
+    <ul>
+        {% for r in results %}
+            <li>{{ r.name }} - {{ r.city }}</li>
+        {% endfor %}
+    </ul>
+
+    <a href="/add-work/">Add Work</a>
+</body>
+</html>
