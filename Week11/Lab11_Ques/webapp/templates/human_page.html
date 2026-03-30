@@ -1,0 +1,29 @@
+<form method="GET" id="selectForm">
+    <label>Select Human:</label>
+    <select name="human_id" onchange="this.form.submit()">
+        <option value="">-- Choose a Name --</option>
+        {% for human in all_humans %}
+            <option value="{{ human.id }}" {% if selected_human.id == human.id %}selected{% endif %}>
+                {{ human.first_name }}
+            </option>
+        {% endfor %}
+    </select>
+</form>
+
+<hr>
+
+<form method="POST">
+    {% csrf_token %}
+    <input type="hidden" name="current_id" value="{{ selected_human.id }}">
+
+    <p>First Name: <input type="text" name="first_name" value="{{ selected_human.first_name|default:'' }}"></p>
+    <p>Last Name: <input type="text" name="last_name" value="{{ selected_human.last_name|default:'' }}"></p>
+    <p>Phone: <input type="text" name="phone" value="{{ selected_human.phone|default:'' }}"></p>
+    <p>Address: <input type="text" name="address" value="{{ selected_human.address|default:'' }}"></p>
+    <p>City: <input type="text" name="city" value="{{ selected_human.city|default:'' }}"></p>
+
+    {% if selected_human %}
+        <button type="submit" name="update">Update Record</button>
+        <button type="submit" name="delete" style="color: red;">Delete Record</button>
+    {% endif %}
+</form>

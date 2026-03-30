@@ -1,0 +1,7 @@
+<h2>Add New Product</h2>
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Save Product</button>
+</form>
+<a href="{% url 'product_index' %}">Back to List</a>

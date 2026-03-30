@@ -1,0 +1,10 @@
+{% for book in books %}
+    <h3>{{ book.title }}</h3>
+    <p>Published by: {{ book.publisher.name }} on {{ book.publication_date }}</p>
+    <p>Authors: 
+        {% for author in book.authors.all %}
+            {{ author.first_name }} {{ author.last_name }}{% if not forloop.last %}, {% endif %}
+        {% endfor %}
+    </p>
+    <hr>
+{% endfor %}
